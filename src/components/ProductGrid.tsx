@@ -24,12 +24,12 @@ const ProductGrid = () => {
         const response = await axios.get('https://fakestoreapi.com/products');
         setProducts(response.data);
         setLoading(false);
-      } catch (err) {
+      } catch {
         setError('Failed to fetch products');
         setLoading(false);
       }
     };
-
+  
     fetchProducts();
   }, []);
 
