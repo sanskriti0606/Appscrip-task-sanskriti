@@ -1,0 +1,45 @@
+.bar {
+    justify-content: space-between; /* Distribute space between children elements */
+    opacity: 1; /* Fully visible */
+    background: #000000; /* Black background */
+    display: flex; /* Use flexbox to align items and space them */
+    padding-left: 20px; /* Adds padding to shift text slightly right */
+    padding-right: 20px; /* Adds padding to shift text slightly right */
+  }
+  
+  .barContent {
+    font-family: 'Simplon Norm', sans-serif; /* Apply Simplon Norm font */
+    font-size: 12px; /* Set font size to 12px */
+    font-weight: 400; /* Set font weight to normal */
+    line-height: 14.4px; /* Set line height */
+    letter-spacing: 1px; /* Add space between letters */
+    text-align: left; /* Align text to the left */
+    text-underline-position: from-font; /* Use the font's underline position */
+    text-decoration-skip-ink: none; /* Avoid skipping ink for underlined text */
+    color: #EB4C6B; /* Light pink color for the text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    padding: 0 10px; /* Adds space around the words */
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 600px) {
+    .bar {
+      flex-direction: column; /* Stack the items vertically */
+      padding-left: 10px; /* Reduce left padding */
+      padding-right: 10px; /* Reduce right padding */
+    }
+  
+    .barContent {
+      font-size: 16px; /* Adjust font size */
+      display: block; /* Ensure text takes up full line */
+      text-align: center; /* Center text */
+      margin-bottom: 8px; /* Space between the items */
+    }
+  
+    /* Show only one word of "Lorem ipsum dolor" */
+    .barContent:nth-child(2),
+    .barContent:nth-child(3) {
+      display: none;
+    }
+  }
+  

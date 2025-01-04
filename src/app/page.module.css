@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  height: 100vh; /* Full height for the page */
+}
+
+.sidebar {
+  width: 25%; /* Sidebar takes up 25% of the width */
+  border-right: 1px solid #e5e7eb;
+  background-color: #f9fafb; /* Light background color for the sidebar */
+  overflow-y: auto;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(px, 1fr)); /* Flexible columns */
+  gap: 1rem;
+  width: 75%; /* Product grid takes up 75% of the width */
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the sidebar and product grid vertically */
+  }
+
+  .sidebar {
+    display: none; /* Hide the sidebar on mobile devices */
+  }
+
+  .productGrid {
+    width: 400%; /* Product grid takes up full width on mobile devices */
+    grid-template-columns: repeat(2, 1fr); /* Only two products per row */
+  }
+}

@@ -1,0 +1,50 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .section {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  .subscribeForm {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .subscribeForm input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .subscribeForm button {
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .quickLinks ul { /* Scoped the selector under a class */
+    list-style: none;
+    padding: 0;
+  }
+  
+  .quickLinks ul li { /* Scoped selector */
+    margin: 5px 0;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  

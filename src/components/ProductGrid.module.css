@@ -1,0 +1,97 @@
+/* Grid Container */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Product Card */
+  .productCard {
+    position: relative;
+    width: 300px;
+    height: 462px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+  
+  .productCard:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  .imageContainer {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .productImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .productInfo {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .productTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .productPricing {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .productCategory {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .productDescription {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .signInLink {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signInLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .gridContainer {
+      grid-template-columns: repeat(4, 1fr); /* Only 2 products per row on small screens */
+    }
+  
+    .sidebar {
+      display: none; /* Hide sidebar on mobile screens */
+    }
+  
+    /* Optional: You can also adjust the size of the products for mobile */
+    .productCard {
+      width: 100%; /* Ensure the product cards take up full width in mobile */
+      height: 50%; /* Adjust the height for mobile */
+    }
+  }
+  

@@ -1,0 +1,245 @@
+/* Global styles for large screens */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1rem;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  margin-top: 2rem; /* Increased top margin */
+}
+
+.logoIcon {
+  font-size: 2rem;
+}
+.logoIcon img {
+  width: 34px; /* Set a smaller width */
+  height: 60px; /* Set a smaller height */
+  object-fit: contain; /* Ensure the image maintains aspect ratio */
+}
+
+.logo {
+  font-size: 2rem; /* Increased size */
+  font-weight: 700; /* Extra bold */
+  color: #000; /* Keep it black */
+  text-align: center; /* Center text */
+  margin-left: 10rem; /* Adjust the value to shift the logo to the right */
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #f1e9e9; /* Ensure icons are black */
+  filter: grayscale(100%); /* Apply black and white filter */
+  transition: filter 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.icon:hover {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+.language {
+  font-size: 1rem;
+  cursor: pointer;
+  color: #000; /* Ensure language dropdown is black */
+}
+
+/* Navigation */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem; /* Increased gap between items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 700; /* Make letters bold */
+  color: #000; /* Black text */
+  text-transform: uppercase; /* Ensure all text is in uppercase */
+  font-size: 1.2rem; /* Slightly larger font size */
+  line-height: 2.5rem; /* Increased line height for more vertical space */
+}
+
+.nav a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Description */
+.description {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: #666;
+  margin-top: 4rem; /* Spacing from the navigation */
+}
+
+.description h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #000;
+}
+
+.description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #070707;
+  margin: 0;
+}
+
+/* Add responsiveness */
+@media (max-width: 1200px) {
+  .logo {
+      margin-left: 5rem; /* Adjust logo margin */
+  }
+
+  .topSection {
+      padding: 1rem;
+      margin-top: 1rem;
+  }
+
+  .nav ul {
+      gap: 2rem; /* Reduce the gap */
+  }
+
+  .nav a {
+      font-size: 1rem; /* Decrease font size */
+      line-height: 2rem;
+  }
+
+  .description {
+      font-size: 1rem; /* Adjust description text size */
+      margin-top: 3rem;
+  }
+
+  .description h1 {
+      font-size: 2rem;
+  }
+
+  .description p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .topSection {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .logo {
+      margin-left: 0; /* Remove margin */
+      font-size: 1.8rem; /* Adjust logo size for medium screens */
+  }
+
+  .nav ul {
+      flex-direction: column; /* Stack nav items */
+      gap: 1.5rem; /* Reduced gap */
+  }
+
+  .nav a {
+      font-size: 1.1rem; /* Adjust font size for better readability */
+      line-height: 2rem;
+  }
+
+  .description {
+      font-size: 1rem; /* Adjust description text size */
+      margin-top: 2rem;
+  }
+
+  .description h1 {
+      font-size: 1.8rem;
+  }
+
+  .description p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  @media (max-width: 480px) {
+    .logoIcon{
+      display: flex; /* Use flexbox for layout */
+
+      font-size: 0rem; /* Reduce logo size */
+      text-align: center; /* Keep logo aligned to the left */
+      margin-left: 128; /* Remove any margin */
+
+      padding: 0rem 1rem;
+      margin-top: 0rem; /* Increased top margin */
+
+    }
+    .logoIcon img {
+      width: 24px; /* Set a smaller width */
+      height: 24px; /* Set a smaller height */
+      object-fit: contain; /* Ensure the image maintains aspect ratio */
+    }
+    .logo {
+      display: flex; /* Use flexbox for layout */
+
+      font-size: 1.5rem; /* Reduce logo size */
+      text-align: center; /* Keep logo aligned to the left */
+      margin-left: 60; /* Remove any margin */
+      flex-direction: row; /* Arrange items in a row */
+      gap: 0.5rem; /* Reduced gap between icons */
+      align-items: left; /* Align icons in the center vertically */
+      padding: 0rem 4rem;
+      margin-top: 1rem; /* Increased top margin */
+    }
+  
+    .icons {
+      display: flex; /* Use flexbox for layout */
+      flex-direction: row; /* Arrange items in a row */
+      gap: 0.5rem; /* Reduced gap between icons */
+      align-items: left; /* Align icons in the center vertically */
+      padding: 0;
+      margin-left: 60; /* Remove any margin */
+    }
+  
+
+  }
+
+  .nav ul {
+      display: flex; /* Ensure flexbox layout */
+      flex-direction: row; /* Stack nav items in a column */
+      gap: 0.5rem; /* Reduce gap further */
+      align-items: left; /* Center nav items */
+      padding: 0;
+      margin: 0;
+  }
+
+  .nav a {
+      font-size: 1rem; /* Adjust font size for smaller devices */
+      text-align: center; /* Ensure the text is centered */
+  }
+
+  .description {
+      font-size: 1rem; /* Adjust font size */
+      margin-top: 1.5rem;
+  }
+
+  .description h1 {
+      font-size: 1.6rem;
+  }
+
+  .description p {
+      font-size: 0.7rem;
+  }
+}
