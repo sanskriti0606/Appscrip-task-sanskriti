@@ -1,42 +1,43 @@
 /* Sidebar styles */
 .sidebar {
-    width: 22rem; /* 64px */
-    padding: 0.5rem;
-    border-right: 1px solid #e5e7eb; /* Light border */
-    display: block;
-    text-transform: uppercase; /* Transform all text to uppercase */
+  width: 22rem; /* 64px */
+  padding: 0.5rem;
+  border-right: 1px solid #e5e7eb; /* Light border */
+  display: block;
+  text-transform: uppercase; /* Transform all text to uppercase */
+}
+
+/* Filter Section */
+.filterSection {
+  margin-bottom: 0.5rem;
+}
+
+.filterTitle {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1f2937; /* Dark gray text */
+}
+
+.select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  border: none; /* Remove default border */
+  border-bottom: 2px solid #d1d5db; /* Add only a bottom border */
+  background-color: transparent; /* Make background transparent */
+  transition: border-color 0.3s ease;
+}
+
+.select:focus {
+  border-bottom-color: #2563eb; /* Blue underline on focus */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    display: block; /* Ensure sidebar is displayed on mobile */
+    width: 100%; /* Full width for the sidebar on mobile */
   }
-  
-  .filterSection {
-    margin-bottom: 0.5rem;
-  }
-  
-  .filterTitle {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #1f2937; /* Dark gray text */
-  }
-  
-  .select {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    outline: none;
-    border: none; /* Remove default border */
-    border-bottom: 2px solid #d1d5db; /* Add only a bottom border */
-    background-color: transparent; /* Make background transparent */
-    transition: border-color 0.3s ease;
-  }
-  
-  .select:focus {
-    border-bottom-color: #2563eb; /* Blue underline on focus */
-  }
-  
-  /* Media Query for Mobile (Hide Sidebar) */
-  @media (max-width: 1024px) {
-    .sidebar {
-      display: none; /* Hide sidebar on small screens */
-    }
-  }
-  
+}

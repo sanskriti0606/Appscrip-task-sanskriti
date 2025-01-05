@@ -3,6 +3,7 @@
   height: 100vh; /* Full height for the page */
 }
 
+/* Sidebar styling */
 .sidebar {
   width: 25%; /* Sidebar takes up 25% of the width */
   border-right: 1px solid #e5e7eb;
@@ -10,6 +11,7 @@
   overflow-y: auto;
 }
 
+/* Product grid styling */
 .productGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(px, 1fr)); /* Flexible columns */
@@ -27,7 +29,9 @@
   }
 
   .sidebar {
-    display: none; /* Hide the sidebar on mobile devices */
+    width: 100%; /* Sidebar takes up full width on mobile */
+    display: block; /* Ensure the sidebar is visible on mobile */
+    border-bottom: 1px solid #e5e7eb; /* Add a bottom border for separation */
   }
 
   .productGrid {

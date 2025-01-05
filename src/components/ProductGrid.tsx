@@ -1,4 +1,4 @@
-'use client'; // Add this line at the top of the file
+// ProductGrid.tsx
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -13,7 +13,11 @@ interface Product {
   description: string;
 }
 
-const ProductGrid = () => {
+interface ProductGridProps {
+  category: string; // Accept category as a prop
+}
+
+const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,16 +33,24 @@ const ProductGrid = () => {
         setLoading(false);
       }
     };
-  
+
     fetchProducts();
   }, []);
+
+  // Filter products based on the selected category
+  const filteredProducts = products.filter((product) => {
+    if (category === 'recommended') {
+      return product.category === 'electronics'; // Example condition, you can modify it
+    }
+    return true; // If not "recommended", show all products
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div className={styles.gridContainer}>
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <div key={product.id} className={styles.productCard}>
           <div className={styles.imageContainer}>
             <img

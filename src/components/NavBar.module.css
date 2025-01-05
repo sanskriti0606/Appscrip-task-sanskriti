@@ -1,46 +1,71 @@
+/* General navbar styling */
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Spread content across */
-    align-items: center;
-    padding: 1rem; /* Adjusted padding */
-    background-color: #f3f4f6; /* Light gray background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  justify-content: space-between; /* Distribute content across the navbar */
+  align-items: center; /* Center the items vertically */
+  padding: 1rem;
+  background-color: #ffffff; /* White background for navbar */
+  border-bottom: 1px solid #e5e7eb; /* Light gray border for navbar */
+}
+
+/* Filter section styling */
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align filter button to the left */
+}
+
+/* Sorting section styling */
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align sorting dropdown to the right */
+}
+
+/* General button styling */
+.button {
+  color: #4b5563; /* Gray text */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: inline-block;
+  font-size: 1rem; /* Default font size */
+  padding: 0.5rem 1rem;
+}
+
+/* Hover effect */
+.button:hover {
+  color: #2563eb; /* Blue on hover */
+}
+
+/* Button when sidebar is hidden (mobile/desktop) */
+.button.showFilter::after {
+  content: 'Show Filter'; /* Text when sidebar is hidden */
+}
+
+/* Button when sidebar is visible (mobile/desktop) */
+.button.hideFilter::after {
+  content: 'Hide Filter'; /* Text when sidebar is visible */
+}
+
+/* Mobile responsiveness for buttons */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    align-items: stretch; /* Stretch items to take full width */
   }
-  
-  .filter {
-    /* Aligns the filter button to the left */
-    display: flex;
-    justify-content: flex-start;
-  }
-  
+
+  /* Filter button and sorting dropdown on mobile */
+  .filter,
   .sort {
-    /* Aligns the sort select box to the right */
-    display: flex;
-    justify-content: flex-end;
+    width: 100%; /* Make filter and sort sections take full width */
+    justify-content: center; /* Center the items on mobile */
   }
-  
+
+  /* Button adjustments on mobile */
   .button {
-    color: #4b5563; /* Gray text */
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s;
+    font-size: 1.1rem; /* Increase font size for better readability on mobile */
+    padding: 0.5rem 1rem; /* Add padding for better touch interaction */
   }
-  
-  .button:hover {
-    color: #2563eb; /* Blue on hover */
-  }
-  
-  .select {
-    border: 1px solid #d1d5db; /* Light gray border */
-    border-radius: 0.375rem; /* Rounded corners */
-    padding: 0.5rem;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  .select:focus {
-    border-color: #2563eb; /* Blue border on focus */
-  }
-  
+}

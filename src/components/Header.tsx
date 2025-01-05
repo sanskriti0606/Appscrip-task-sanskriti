@@ -8,8 +8,14 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.topSection}>
       <div className={styles.logoIcon}>
-  <Image src="./image.png" alt="Logo Icon" />
-</div>
+      <Image 
+  src="/image.png" 
+  alt="Product" 
+  width={500} // Replace with your image's width
+  height={300} // Replace with your image's height
+  priority // Optional: if the image is critical for the page load
+// Set the height of the image
+/>      </div>
         <div className={styles.logo}>LOGO</div>
         <div className={styles.icons}>
           <a href="#search" className={styles.icon}>🔍</a>
