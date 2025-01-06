@@ -1,0 +1,57 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px; /* or your desired width */
+  transition: width 0.3s ease; /* Smooth transition when hiding */
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  transition: margin-left 0.3s ease; /* Adjust content width when sidebar is hidden */
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* When sidebar is hidden, product grid takes full width */
+.sidebar.hidden {
+  width: 0;
+}
+
+.container.sidebar-hidden {
+  margin-left: 0; /* Remove the margin when the sidebar is hidden */
+}
+
+.productGrid {
+  grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
+}
+
+/* Mobile-responsive design adjustments */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}

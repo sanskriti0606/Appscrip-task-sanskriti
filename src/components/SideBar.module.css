@@ -1,10 +1,10 @@
-/* Sidebar styles */
+
 .sidebar {
-  width: 22rem; /* 64px */
+  width: 16rem; 
   padding: 0.5rem;
-  border-right: 1px solid #e5e7eb; /* Light border */
+  border-right: 1px solid #e5e7eb; 
   display: block;
-  text-transform: uppercase; /* Transform all text to uppercase */
+  text-transform: uppercase; 
 }
 
 /* Filter Section */
@@ -16,7 +16,7 @@
   font-weight: bold;
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: #1f2937; /* Dark gray text */
+  color: #1f2937; 
 }
 
 .select {
@@ -24,20 +24,20 @@
   padding: 0.5rem;
   font-size: 1rem;
   outline: none;
-  border: none; /* Remove default border */
-  border-bottom: 2px solid #d1d5db; /* Add only a bottom border */
-  background-color: transparent; /* Make background transparent */
+  border: none; 
+  border-bottom: 2px solid #d1d5db; 
+  background-color: transparent; 
   transition: border-color 0.3s ease;
 }
 
 .select:focus {
-  border-bottom-color: #2563eb; /* Blue underline on focus */
+  border-bottom-color: #2563eb; 
 }
 
-/* Media Query for Mobile */
+
 @media (max-width: 768px) {
   .sidebar {
-    display: block; /* Ensure sidebar is displayed on mobile */
-    width: 100%; /* Full width for the sidebar on mobile */
+    display: block; 
+    width: 100%; 
   }
 }

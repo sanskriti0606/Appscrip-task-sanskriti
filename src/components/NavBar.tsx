@@ -6,10 +6,9 @@ import styles from './NavBar.module.css';
 interface NavbarProps {
   toggleSidebar: () => void;
   isSidebarVisible: boolean;
-  onSelectCategory: (category: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarVisible, onSelectCategory }) => {
+const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarVisible }) => {
   return (
     <nav className={styles.navbar}>
       {/* Filter Section */}
@@ -20,17 +19,6 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarVisible, onSele
         >
           {isSidebarVisible ? "Hide Filter" : "Show Filter"}
         </button>
-      </div>
-
-      {/* Sorting Section */}
-      <div className={styles.sort}>
-      <select className={styles.select} onChange={(e) => onSelectCategory(e.target.value)}>
-  <option value="recommended">Recommended</option>
-  <option value="newest">Newest</option>
-  <option value="priceLowToHigh">Price: Low to High</option>
-  <option value="priceHighToLow">Price: High to Low</option>
-</select>
-
       </div>
     </nav>
   );

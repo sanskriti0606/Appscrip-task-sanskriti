@@ -1,46 +1,37 @@
-// App.tsx
+import Link from 'next/link'
+import { ProductGrid } from '@/components/ProductGrid'
+import styles from './page.module.css'
 
-'use client';
-
-import React, { useState } from "react";
-import CustomBar from "../components/CustomBar";
-import Header from "../components/Header";
-import Navbar from "../components/NavBar";
-import Sidebar from "../components/SideBar";
-import ProductGrid from "../components/ProductGrid";
-import styles from "./page.module.css";
-
-const App = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
-  const [category, setCategory] = useState('recommended');
-
-  const toggleSidebar = () => {
-    setIsSidebarVisible((prevState) => !prevState);
-  };
-
-  const handleCategorySelect = (selectedCategory: string) => {
-    setCategory(selectedCategory);
-  };
+async function getProducts() {
+  const res = await fetch('https://fakestoreapi.com/products', {
+    next: { revalidate: 3600 }
+  })
   
+  if (!res.ok) {
+    throw new Error('Failed to fetch products')
+  }
+
+  return res.json()
+}
+
+export default async function Home() {
+  const products = await getProducts()
 
   return (
-    <div className={styles.pageContainer}>
-      <CustomBar />
-      <Header />
-      <Navbar toggleSidebar={toggleSidebar} isSidebarVisible={isSidebarVisible} onSelectCategory={handleCategorySelect} />
-      <div className={styles.container}>
-        {/* Always show Sidebar on desktop, conditionally show on mobile */}
-        {isSidebarVisible && (
-          <div className={styles.sidebar}>
-            <Sidebar />
-          </div>
-        )}
-        <div className={styles.productGrid}>
-          <ProductGrid category={category} /> {/* Pass the category prop */}
-        </div>
+    <div className={styles.container}>
+      <section className={styles.hero}>
+        <Link href="/products" className={styles.cta}>
+          {/* Add Hero Section Content here if needed */}
+        </Link>
+      </section>
+
+      <ProductGrid products={products.slice(0, 8)} />
+      
+      <div className={styles.viewMore}>
+        <Link href="/products" className={styles.viewMoreLink}>
+          View All Products
+        </Link>
       </div>
     </div>
-  );
-};
-
-export default App;
+  )
+}

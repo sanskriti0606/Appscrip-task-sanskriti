@@ -1,71 +1,70 @@
-/* General navbar styling */
+
 .navbar {
   display: flex;
-  justify-content: space-between; /* Distribute content across the navbar */
-  align-items: center; /* Center the items vertically */
+  justify-content: space-between; 
+  align-items: center; 
   padding: 1rem;
-  background-color: #ffffff; /* White background for navbar */
-  border-bottom: 1px solid #e5e7eb; /* Light gray border for navbar */
+  background-color: #ffffff; 
+  border-bottom: 1px solid #e5e7eb; 
 }
 
-/* Filter section styling */
+
 .filter {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align filter button to the left */
+  justify-content: flex-start; 
 }
 
-/* Sorting section styling */
+
 .sort {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align sorting dropdown to the right */
+  justify-content: flex-end; 
 }
 
-/* General button styling */
+
 .button {
-  color: #4b5563; /* Gray text */
+  color: #4b5563; 
   background: none;
   border: none;
   cursor: pointer;
   transition: color 0.3s;
   display: inline-block;
-  font-size: 1rem; /* Default font size */
+  font-size: 1rem; 
   padding: 0.5rem 1rem;
 }
 
-/* Hover effect */
 .button:hover {
-  color: #2563eb; /* Blue on hover */
+  color: #2563eb; 
 }
 
-/* Button when sidebar is hidden (mobile/desktop) */
+
 .button.showFilter::after {
-  content: 'Show Filter'; /* Text when sidebar is hidden */
+  content: 'Show Filter'; 
 }
 
-/* Button when sidebar is visible (mobile/desktop) */
+
 .button.hideFilter::after {
-  content: 'Hide Filter'; /* Text when sidebar is visible */
+  content: 'Hide Filter'; 
 }
 
-/* Mobile responsiveness for buttons */
+
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Stack elements vertically on mobile */
-    align-items: stretch; /* Stretch items to take full width */
+    flex-direction: column; 
+    align-items: stretch; 
   }
 
-  /* Filter button and sorting dropdown on mobile */
+
   .filter,
   .sort {
-    width: 100%; /* Make filter and sort sections take full width */
-    justify-content: center; /* Center the items on mobile */
+    width: 100%; 
+    justify-content: center; 
   }
 
-  /* Button adjustments on mobile */
+
   .button {
-    font-size: 1.1rem; /* Increase font size for better readability on mobile */
-    padding: 0.5rem 1rem; /* Add padding for better touch interaction */
+    font-size: 1.1rem; 
+    padding: 0.5rem 1rem; 
   }
 }
