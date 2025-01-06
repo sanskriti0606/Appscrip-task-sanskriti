@@ -27,11 +27,7 @@ export default async function Home() {
 
       <ProductGrid products={products.slice(0, 8)} />
       
-      <div className={styles.viewMore}>
-        <Link href="/products" className={styles.viewMoreLink}>
-          View All Products
-        </Link>
-      </div>
+    
     </div>
   )
 }
